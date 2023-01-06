@@ -1,6 +1,7 @@
 //array of colors
 let buttonColors = ["red", "blue", "green", "yellow"];
 
+//game pattern var to keep track of colors selected 
 let gamePattern = [];
 
 //function to get a random number
@@ -12,13 +13,10 @@ function nextSequence(){
 //how to choose a random color
 let randomChosenColor = buttonColors[nextSequence()]
 
-//add the pattern accuring pattern to the game pattern to keep track
+//add the accuring pattern to the game pattern array to keep track
 gamePattern.push(randomChosenColor)
 
-//select a random box and animate it to flash
+//select a random color and animate it to flash
 $(`#${randomChosenColor}`).fadeOut(100).fadeIn(100)
-
-
-
 
 
