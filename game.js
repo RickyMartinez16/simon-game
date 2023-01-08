@@ -16,7 +16,7 @@ let randomChosenColor = buttonColors[nextSequence()]
 //add the accuring pattern to the game pattern array to keep track
 gamePattern.push(randomChosenColor)
 
-//select a random color and animate it to flash
+//select a random color and animate it to flash and play audio
 $(`#${randomChosenColor}`).fadeOut(100).fadeIn(100).ready(() => {
     const audio = new Audio(`sounds/${randomChosenColor}.mp3`);
     audio.play();
