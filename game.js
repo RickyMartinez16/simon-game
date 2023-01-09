@@ -25,12 +25,10 @@ $(`#${randomChosenColor}`).fadeOut(100).fadeIn(100)
 let audio = new Audio(`sounds/${randomChosenColor}.mp3`);
 audio.play();
 
-//1. Use jQuery to detect when any of the buttons are clicked and trigger a handler function.
-
+//detect when any of the buttons are clicked and trigger a handler function.
 $(".btn").click((event) => {
     let userChosenColor = event.currentTarget.id;
     
+    //push user clicked color into the user clicked pattern
     userClickedPattern.push(userChosenColor);
-
-    console.log(userClickedPattern)
 })
