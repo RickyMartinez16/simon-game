@@ -4,7 +4,7 @@ let buttonColors = ["red", "blue", "green", "yellow"];
 //game pattern var to keep track of colors selected 
 let gamePattern = [];
 
-
+let userClickedPattern = []
 
 //function to get a random number
 function nextSequence(){
@@ -29,5 +29,8 @@ audio.play();
 
 $(".btn").click((event) => {
     let userChosenColor = event.currentTarget.id;
-    console.log(userChosenColor)
+    
+    userClickedPattern.push(userChosenColor);
+
+    console.log(userClickedPattern)
 })
