@@ -37,10 +37,19 @@ $(".btn").click((event) => {
     playSound(userChosenColor)
 
     console.log(userClickedPattern)
+
+    console.log(event)
 })
 
 //play sound fucntion
 function playSound(name){
     let audio = new Audio(`sounds/${name}.mp3`);
     audio.play();
+}
+
+function animatePress(currentColor){
+    $(".btn").click(() => {
+        
+        $(".btn " + currentColor).addClass("pressed")
+    })
 }
