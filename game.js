@@ -36,10 +36,11 @@ $(".btn").click((event) => {
     //play sound when clicked
     playSound(userChosenColor)
 
-    console.log(userClickedPattern)
+    // console.log(userClickedPattern)
 
-    console.log(event)
+    // console.log(event)
 
+    //animate the sqaure when its clicked
     animatePress(userChosenColor)
 })
 
@@ -52,4 +53,8 @@ function playSound(name){
 //animate press function
 function animatePress(currentColor){
     $(`#${currentColor}`).addClass("pressed")
+
+    setTimeout(function() {
+        $(`#${currentColor}`).removeClass("pressed");
+    }, 100);
 }
