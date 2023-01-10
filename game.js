@@ -52,8 +52,10 @@ function playSound(name){
 
 //animate press function
 function animatePress(currentColor){
+    //select the color current pressed and add the pressed css class to it 
     $(`#${currentColor}`).addClass("pressed")
 
+    //after 100 miliseconds remove the pressed class
     setTimeout(function() {
         $(`#${currentColor}`).removeClass("pressed");
     }, 100);
