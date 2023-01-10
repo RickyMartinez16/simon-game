@@ -47,6 +47,7 @@ function playSound(name){
     audio.play();
 }
 
+//animate press function
 function animatePress(currentColor){
     $(".btn").click(() => {
         
