@@ -33,11 +33,13 @@ $(".btn").click((event) => {
     //push user clicked color into the user clicked pattern
     userClickedPattern.push(userChosenColor);
 
+    //play sound when clicked
     playSound(userChosenColor)
 
     console.log(userClickedPattern)
 })
 
+//play sound fucntion
 function playSound(name){
     let audio = new Audio(`sounds/${name}.mp3`);
     audio.play();
