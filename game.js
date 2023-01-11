@@ -59,6 +59,8 @@ $(".btn").click((event) => {
     //animate the sqaure when its clicked
     animatePress(userChosenColor)
 
+    nextSequence()
+
 })
 
 //play sound fucntion
