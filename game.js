@@ -31,7 +31,9 @@ function nextSequence(){
     $("h1").text("Level " + level)
 }
 
-//key down event
+//key down event---------------------------------------------------------------
+
+//make variable to toggle if this is the firest keydown event
 let gameStarted = false;
 
 $(document).keydown(() => {
