@@ -11,7 +11,7 @@ let level = 0
 
 
 
-//next sequence that adds a new color to the game pattern------------------------------------------------------------------------
+//NEXT SEQUENCE FUNCTION THAT ADDS A NEW COLOR TO THE GAME PATTERN----------------------------------------------------------------------
 
 function nextSequence(){
     //get a random number
@@ -41,7 +41,7 @@ function nextSequence(){
 //-------------------------------------------------------------------------------------------------------------------------
 
 
-//check answer function -----------------------------------------------------------------------------------------------
+//CHECK ANSWER FUNCTION-----------------------------------------------------------------------------------------------
 
 function checkAnswer(currentLevel){
     //if the currentLevel (last color that the user clicked) is the same as the last color in the game pattern it is successful
@@ -60,7 +60,7 @@ function checkAnswer(currentLevel){
     }
 }
 
-//key down event to start game-------------------------------------------------------------------------------------------------
+//KEYDOWN EVENT TO START THE GAME-------------------------------------------------------------------------------------------------
 
 //make variable to toggle if this is the firest keydown event
 let gameStarted = false;
@@ -74,7 +74,7 @@ $(document).keydown(() => {
 })
 
 
-//user click down event-----------------------------------------------------------------------------------------------------------
+//USER CLICK DOWN EVENT-----------------------------------------------------------------------------------------------------------
 
 //detect when any of the buttons are clicked and trigger a handler function.
 $(".btn").click((event) => {
@@ -108,7 +108,7 @@ $(".btn").click((event) => {
 
 
 
-//sounds and animation functions ---------------------------------------------------------------------------------------------
+//SOUNDS AND ANIMATION FUNCTIONS ---------------------------------------------------------------------------------------------
 
 //play sound fucntion
 function playSound(name){
