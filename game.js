@@ -1,9 +1,10 @@
 //array of colors
 let buttonColors = ["red", "blue", "green", "yellow"];
 
-//game pattern var to keep track of colors selected 
+//game pattern var to keep track of colors that are randomly selected for the game
 let gamePattern = [];
 
+//array that tracks the pattern that the user has clicked
 let userClickedPattern = []
 
 let level = 0
