@@ -27,6 +27,7 @@ function nextSequence(){
     //adds one level every time nextSequence is called
     level = level + 1
 
+    //change the heading every time nextSequence is called
     $("h1").text("Level " + level)
 }
 
