@@ -23,12 +23,13 @@ function nextSequence(){
 
     //play audio
     playSound(name)
+
+    $("h1").text("Level " + level + 1)
 }
 
 //key down event
 $(document).keydown(() => {
     nextSequence();
-    $("h1").text("Level " + level + 1)
 })
 
 let level = 0
