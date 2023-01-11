@@ -28,8 +28,13 @@ function nextSequence(){
 }
 
 //key down event
+let gameStarted = false;
+
 $(document).keydown(() => {
-    nextSequence();
+    if(!gameStarted){
+        nextSequence();
+        gameStarted = true
+    }
 })
 
 let level = 0
@@ -52,6 +57,7 @@ $(".btn").click((event) => {
 
     //animate the sqaure when its clicked
     animatePress(userChosenColor)
+
 })
 
 //play sound fucntion
