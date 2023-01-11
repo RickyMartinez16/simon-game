@@ -6,6 +6,10 @@ let gamePattern = [];
 
 let userClickedPattern = []
 
+//key down event
+$(document).keydown(() => {
+    console.log("keydown")
+})
 
 //function to get a random number
 function nextSequence(){
