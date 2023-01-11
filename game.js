@@ -40,6 +40,7 @@ function nextSequence(){
 //-------------------------------------------------------------------------------------------------------------------------
 
 
+//check answer function -----------------------------------------------------------------------------------------------
 
 function checkAnswer(currentLevel){
     if(currentLevel === gamePattern[gamePattern.length - 1]){
