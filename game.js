@@ -9,11 +9,17 @@ let userClickedPattern = []
 
 let level = 0
 
+//make variable to toggle if this is the first keydown event
+let gameStarted = false;
+
 
 
 //NEXT SEQUENCE FUNCTION THAT ADDS A NEW COLOR TO THE GAME PATTERN----------------------------------------------------------------------
 
 function nextSequence(){
+    //reset the user clicked pattern
+    userClickedPattern = []
+
     //get a random number
     let randomNumber = Math.floor(Math.random() * 4);
     
@@ -32,7 +38,7 @@ function nextSequence(){
     playSound(randomChosenColor)
 
     //adds one level every time nextSequence is called
-    level = level + 1
+    level++
 
     //change the heading every time nextSequence is called
     $("h1").text("Level " + level)
@@ -56,14 +62,24 @@ function checkAnswer(currentLevel){
             }, 1000)
         }
     } else {
-        console.log("wrong")
+        // console.log("wrong")
+        playSound("wrong");
+
+        $("body").addClass("game-over");
+
+        setTimeout(() => {
+            $("body").removeClass("game-over");
+        }, 200);
+
+        $("h1").text("Game Over, Press Any Key to Restart")
+
+        startOver()
     }
 }
 
+
 //KEYDOWN EVENT TO START THE GAME-------------------------------------------------------------------------------------------------
 
-//make variable to toggle if this is the firest keydown event
-let gameStarted = false;
 
 //check the whole doc for a keydown and run nextSequence if its first kedown
 $(document).keydown(() => {
@@ -86,7 +102,7 @@ $(".btn").click((event) => {
     //play sound when clicked
     playSound(userChosenColor)
 
-    console.log("user clicked pattern: " + userClickedPattern)
+    // console.log("user clicked pattern: " + userClickedPattern)
 
     // console.log(event)
 
@@ -127,3 +143,10 @@ function animatePress(currentColor){
     }, 100);
 }
 
+// START OVER FUNCTION----------------------------------------------------------------------------------
+function startOver(){
+    //resets the variables
+    level = 0;
+    gamePattern = [];
+    gameStarted = false;
+}
