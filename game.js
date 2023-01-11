@@ -13,8 +13,8 @@ let level = 0
 
 //next sequence that adds a new color to the game pattern------------------------------------------------------------------------
 
-//function to get a random number
 function nextSequence(){
+    //get a random number
     let randomNumber = Math.floor(Math.random() * 4);
     
     //how to choose a random color
@@ -23,7 +23,7 @@ function nextSequence(){
     //add the accuring pattern to the game pattern array to keep track
     gamePattern.push(randomChosenColor)
 
-    console.log("game pattern: " + gamePattern)
+    // console.log("game pattern: " + gamePattern)
 
     //select a random color and animate it to flash 
     $(`#${randomChosenColor}`).fadeIn(100).fadeOut(100).fadeIn(100)
@@ -44,9 +44,12 @@ function nextSequence(){
 //check answer function -----------------------------------------------------------------------------------------------
 
 function checkAnswer(currentLevel){
+    //if the currentLevel (last color that the user clicked) is the same as the last color in the game pattern it is successful
     if(currentLevel === gamePattern[userClickedPattern.length - 1]){
-        console.log("success")
+        // console.log("success")
+        //then check if the length of the user clicked pattern is the same length as the game pattern so you know the user is done
         if(userClickedPattern.length === gamePattern.length){
+            //run the nextSequence() after a 1 second delay and reset the userClickedPattern to an empty array
             setTimeout(() => {
                 nextSequence();
                 userClickedPattern = []
