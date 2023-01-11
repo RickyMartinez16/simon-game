@@ -36,6 +36,7 @@ function nextSequence(){
 //make variable to toggle if this is the firest keydown event
 let gameStarted = false;
 
+//check the whole doc for a keydown and run nextSequence if its first kedown
 $(document).keydown(() => {
     if(!gameStarted){
         nextSequence();
