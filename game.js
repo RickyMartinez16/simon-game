@@ -24,6 +24,7 @@ function nextSequence(){
     //play audio
     playSound(name)
 
+    //adds one level every time nextSequence is called
     level = level + 1
 
     $("h1").text("Level " + level)
