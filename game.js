@@ -26,10 +26,10 @@ function nextSequence(){
     console.log("game pattern: " + gamePattern)
 
     //select a random color and animate it to flash 
-    let name = $(`#${randomChosenColor}`).fadeIn(100).fadeOut(100).fadeIn(100)
+    $(`#${randomChosenColor}`).fadeIn(100).fadeOut(100).fadeIn(100)
 
     //play audio
-    playSound(name)
+    playSound(randomChosenColor)
 
     //adds one level every time nextSequence is called
     level = level + 1
@@ -44,8 +44,13 @@ function nextSequence(){
 //check answer function -----------------------------------------------------------------------------------------------
 
 function checkAnswer(currentLevel){
-    if(currentLevel === gamePattern[gamePattern.length - 2]){
+    if(currentLevel === gamePattern[userClickedPattern.length - 1]){
         console.log("success")
+        if(userClickedPattern.length === gamePattern.length){
+            setTimeout(() => {
+                nextSequence();
+            }, 1000)
+        }
     } else {
         console.log("wrong")
     }
@@ -77,19 +82,23 @@ $(".btn").click((event) => {
     //play sound when clicked
     playSound(userChosenColor)
 
-    console.log("user clicked pattern: "+ userClickedPattern)
+    console.log("user clicked pattern: " + userClickedPattern)
 
     // console.log(event)
 
     //animate the sqaure when its clicked
     animatePress(userChosenColor)
 
+
     //call nextSequence function to add another color to the game pattern
-    nextSequence();
+    // nextSequence()
+    // setTimeout(function() {
+    //     nextSequence();
+    // }, 1000);
+
 
     //call the checkAnswer function to check the answer that the user clicked 
     checkAnswer(userClickedPattern[userClickedPattern.length - 1]);
-
 })
 
 
