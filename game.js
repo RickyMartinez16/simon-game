@@ -8,6 +8,10 @@ let userClickedPattern = []
 
 let level = 0
 
+
+
+//next sequence--------------------------------------------------------------------------------------------------
+
 //function to get a random number
 function nextSequence(){
     let randomNumber = Math.floor(Math.random() * 4);
@@ -18,8 +22,10 @@ function nextSequence(){
     //add the accuring pattern to the game pattern array to keep track
     gamePattern.push(randomChosenColor)
 
+    console.log("game pattern: " + gamePattern)
+
     //select a random color and animate it to flash 
-    let name = $(`#${randomChosenColor}`).fadeOut(100).fadeIn(100)
+    let name = $(`#${randomChosenColor}`).fadeIn(100).fadeOut(100).fadeIn(100)
 
     //play audio
     playSound(name)
@@ -29,6 +35,18 @@ function nextSequence(){
 
     //change the heading every time nextSequence is called
     $("h1").text("Level " + level)
+}
+
+//-------------------------------------------------------------------------------------------------------------------------
+
+
+
+function checkAnswer(currentLevel){
+    if(currentLevel === gamePattern[gamePattern.length - 1]){
+        console.log("success")
+    } else {
+        console.log("wrong")
+    }
 }
 
 //key down event---------------------------------------------------------------
@@ -46,7 +64,6 @@ $(document).keydown(() => {
 
 
 
-
 //detect when any of the buttons are clicked and trigger a handler function.
 $(".btn").click((event) => {
     let userChosenColor = event.currentTarget.id;
@@ -57,14 +74,16 @@ $(".btn").click((event) => {
     //play sound when clicked
     playSound(userChosenColor)
 
-    // console.log(userClickedPattern)
+    console.log("user clicked pattern: "+ userClickedPattern)
 
     // console.log(event)
 
     //animate the sqaure when its clicked
     animatePress(userChosenColor)
 
-    nextSequence()
+    nextSequence();
+
+    checkAnswer(userClickedPattern[userClickedPattern.length - 1]);
 
 })
 
@@ -84,3 +103,4 @@ function animatePress(currentColor){
         $(`#${currentColor}`).removeClass("pressed");
     }, 100);
 }
+
