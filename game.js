@@ -49,6 +49,7 @@ function checkAnswer(currentLevel){
         if(userClickedPattern.length === gamePattern.length){
             setTimeout(() => {
                 nextSequence();
+                userClickedPattern = []
             }, 1000)
         }
     } else {
