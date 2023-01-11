@@ -50,7 +50,7 @@ function checkAnswer(currentLevel){
     }
 }
 
-//key down event---------------------------------------------------------------
+//key down event to start game-------------------------------------------------------------------------------------------------
 
 //make variable to toggle if this is the firest keydown event
 let gameStarted = false;
@@ -87,6 +87,11 @@ $(".btn").click((event) => {
     checkAnswer(userClickedPattern[userClickedPattern.length - 1]);
 
 })
+
+
+
+
+//sounds and animation functions ---------------------------------------------------------------------------------------------
 
 //play sound fucntion
 function playSound(name){
