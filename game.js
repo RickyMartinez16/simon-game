@@ -11,7 +11,7 @@ let level = 0
 
 
 
-//next sequence--------------------------------------------------------------------------------------------------
+//next sequence that adds a new color to the game pattern------------------------------------------------------------------------
 
 //function to get a random number
 function nextSequence(){
@@ -65,6 +65,7 @@ $(document).keydown(() => {
 })
 
 
+//user click down event-----------------------------------------------------------------------------------------------------------
 
 //detect when any of the buttons are clicked and trigger a handler function.
 $(".btn").click((event) => {
@@ -83,8 +84,10 @@ $(".btn").click((event) => {
     //animate the sqaure when its clicked
     animatePress(userChosenColor)
 
+    //call nextSequence function to add another color to the game pattern
     nextSequence();
 
+    //call the checkAnswer function to check the answer that the user clicked 
     checkAnswer(userClickedPattern[userClickedPattern.length - 1]);
 
 })
