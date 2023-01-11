@@ -6,7 +6,7 @@ let gamePattern = [];
 
 let userClickedPattern = []
 
-
+let level = 0
 
 //function to get a random number
 function nextSequence(){
@@ -24,7 +24,9 @@ function nextSequence(){
     //play audio
     playSound(name)
 
-    $("h1").text("Level " + level + 1)
+    level = level + 1
+
+    $("h1").text("Level " + level)
 }
 
 //key down event
@@ -37,7 +39,6 @@ $(document).keydown(() => {
     }
 })
 
-let level = 0
 
 
 
