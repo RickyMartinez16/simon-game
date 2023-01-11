@@ -43,7 +43,7 @@ function nextSequence(){
 //check answer function -----------------------------------------------------------------------------------------------
 
 function checkAnswer(currentLevel){
-    if(currentLevel === gamePattern[gamePattern.length - 1]){
+    if(currentLevel === gamePattern[gamePattern.length - 2]){
         console.log("success")
     } else {
         console.log("wrong")
