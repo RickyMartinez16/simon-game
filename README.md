@@ -5,7 +5,7 @@ Welcome to the Simon Game! This is a simple yet challenging game where you have 
 
 ## How to Play
 
-1. Press the "Start" button to begin the game.
+1. Press any key to begin the game.
 2. The computer will generate a random sequence of colored buttons, which you must repeat by clicking on the corresponding buttons.
 3. If you repeat the sequence correctly, the computer will add another button to the sequence, and you must repeat the new, longer sequence.
 4. The game ends when you make a mistake and fail to repeat the sequence correctly.
