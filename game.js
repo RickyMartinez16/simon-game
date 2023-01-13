@@ -63,14 +63,21 @@ function checkAnswer(currentLevel){
         }
     } else {
         // console.log("wrong")
+
+        //if the user gets it wrong:
+
+        //play the "wrong" sound
         playSound("wrong");
 
+        //add the "game-over" CSS class to the body
         $("body").addClass("game-over");
 
+        //remove the "game-over" class after 2 milliseconds
         setTimeout(() => {
             $("body").removeClass("game-over");
         }, 200);
 
+        //change the heading text
         $("h1").text("Game Over! Press Any Key to Restart")
 
         startOver()
