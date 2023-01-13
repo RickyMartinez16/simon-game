@@ -17,6 +17,12 @@ Welcome to the Simon Game! This is a simple yet challenging game where you have 
 - Try to memorize the sequence as it is being played, rather than relying on the buttons lighting up to remind you of the sequence.
 - Take a break if you feel like you're getting overwhelmed, and come back to the game with a fresh mind.
 
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript/JQuery
+
 ## Enjoy!
 
 We hope you have fun playing the Simon Game! If you have any feedback or suggestions, please let us know by submitting an issue on GitHub.
