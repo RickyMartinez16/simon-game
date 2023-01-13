@@ -79,7 +79,8 @@ function checkAnswer(currentLevel){
 
         //change the heading text
         $("h1").text("Game Over! Press Any Key to Restart")
-
+        
+        //call the startOver function
         startOver()
     }
 }
